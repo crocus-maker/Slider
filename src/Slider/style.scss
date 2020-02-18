@@ -1,0 +1,81 @@
+.slider {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+
+  &__images {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    white-space: nowrap;
+    font-size: 0;
+  }
+
+  &__image {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: 50%;
+  }
+
+  &__prev,
+  &__next {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 50px;
+  }
+
+  &__prev:hover {
+    background: rgba(255, 255, 255, 0.3) url('https://www.shareicon.net/data/128x128/2015/08/19/87501_left_512x512.png') no-repeat 50%;
+    background-size: 40px;
+  }
+
+  &__next:hover {
+    background: rgba(255, 255, 255, 0.3) url('https://www.shareicon.net/data/128x128/2015/08/19/87498_right_512x512.png') no-repeat 50%;
+    background-size: 40px;
+  }
+
+  &__prev {
+    left: 0;
+  }
+
+  &__next {
+    right: 0;
+  }
+
+  &__navigation {
+    display: inline-flex;
+    position: absolute;
+    bottom: 20px;
+
+    &-item {
+      width: 10px;
+      height: 10px;
+      padding: 5px;
+      cursor: pointer;
+
+      &:before {
+        display: block;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        box-shadow: 0 0 0 2px #fff inset;
+        content: '';
+      }
+
+      & + & {
+        margin-left: 20px;
+      }
+
+      &.active:before {
+        background-color: #fff;
+      }
+    }
+  }
+}
